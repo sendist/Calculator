@@ -14,6 +14,9 @@ public class ProsesKalkulator {
     }
 
     public double bagi(double a, double b) {
+        if (b == 0) {
+            throw new ArithmeticException("Tidak bisa dibagi 0");
+        }
         return a / b;
     }
 }

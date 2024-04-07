@@ -4,10 +4,10 @@ Repository ini berisi aplikasi kalkulator yang akan diguankan untuk melakukan pe
 ## Spesifikasi Aplikasi Kalkulator
 1. Project sederhana (kalkulator: tambah, kurang, kali, bagi) menggunakan
 environment yang sudah dibuat dengan Main App:
-● user melakukan operasi kalkulator dengan input dua buah operand
-● user memilih operator yang mau digunakan untuk proses penghitungan
-● aplikasi melakukan perhitungan dengan memanggil method komputasi
-● aplikasi menampilkan hasilnya ke layar
+* user melakukan operasi kalkulator dengan input dua buah operand
+* user memilih operator yang mau digunakan untuk proses penghitungan
+* aplikasi melakukan perhitungan dengan memanggil method komputasi
+* aplikasi menampilkan hasilnya ke layar
 2. Buat modul program yang terisolasi dari modul lain. Modul ini digunakan untuk
 melakukan proses kalkulator (tambah, kurang, kali, bagi) dan 1 buah modul
 komputasi yang menerima dua buah nilai angka, kemudian melakukan validasi dan

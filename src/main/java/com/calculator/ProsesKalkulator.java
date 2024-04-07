@@ -1,22 +1,19 @@
 package com.calculator;
 
 public class ProsesKalkulator {
-    public double tambah(double a, double b) {
-        return a + b;
+    public double tambah(double operand1, double operand2) {
+        return operand1 + operand2;
     }
 
-    public double kurang(double a, double b) {
-        return a - b;
+    public double kurang(double operand1, double operand2) {
+        return operand1 - operand2;
     }
 
-    public double kali(double a, double b) {
-        return a * b;
+    public double kali(double operand1, double operand2) {
+        return operand1 * operand2;
     }
 
-    public double bagi(double a, double b) {
-        if (b == 0) {
-            throw new ArithmeticException("Tidak bisa dibagi 0");
-        }
-        return a / b;
+    public double bagi(double operand1, double operand2) {
+        return operand1 / operand2;
     }
 }

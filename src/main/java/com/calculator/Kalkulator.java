@@ -1,9 +1,8 @@
 package com.calculator;
 public class Kalkulator {
     public double kalkulasi(String operand1, String operand2, String operator) {
-
+        double hasil = 0;
         if(isValid(operand1, operand2, operator)) {
-            double hasil = 0;
             ProsesKalkulator prosesKalkulator = new ProsesKalkulator();
             double angka1 = Double.parseDouble(operand1);
             double angka2 = Double.parseDouble(operand2);
@@ -24,9 +23,10 @@ public class Kalkulator {
                 default:
                     System.out.println("Operator tidak valid!");
             }
-            return hasil;
+        }else{
+            hasil = Double.NaN;
         }
-        return Double.NaN;
+        return hasil;
     }
 
     public static boolean isValid(String operand1, String operand2, String operator) {

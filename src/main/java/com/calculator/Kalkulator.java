@@ -1,4 +1,5 @@
 package com.calculator;
+
 public class Kalkulator {
     public double kalkulasi(String operand1, String operand2, String operator) {
         double hasil = 0;
@@ -30,12 +31,15 @@ public class Kalkulator {
     public static boolean isValid(String operand1, String operand2, String operator) {
 
         // Validasi apakah operand adalah angka
-        try {
-            Double.parseDouble(operand1);
-            Double.parseDouble(operand2);
-        } catch (NumberFormatException e) {
+        String regex = "^[0-9]+$";
+        boolean isValid = true;
+
+        boolean isNumber1 = operand1.matches(regex);
+        boolean isNumber2 = operand2.matches(regex);
+
+        if (!isNumber1 || !isNumber2) {
             System.out.println("Nilai yang dihitung harus angka!");
-            return false;
+            isValid = false;
         }
 
         // Validasi range angka
@@ -43,21 +47,21 @@ public class Kalkulator {
         double num2 = Double.parseDouble(operand2);
         if (num1 < -32768 || num1 > 32767 || num2 < -32768 || num2 > 32767) {
             System.out.println("Nilai operand harus berada pada range -32,768 hingga 32,767!");
-            return false;
+            isValid = false;
         }
 
         // Validasi operator
         if (!operator.equals("+") && !operator.equals("-") && !operator.equals("*") && !operator.equals("/")) {
             System.out.println("Operator yang diinputkan tidak valid!");
-            return false;
+            isValid = false;
         }
 
         // Validasi pembagi tidak boleh nol
         if (operator.equals("/") && num2 == 0.0) {
             System.out.println("Pembagi tidak boleh nol!");
-            return false;
+            isValid = false;
         }
 
-        return true;
+        return isValid;
     }
 }

@@ -14,12 +14,9 @@ komputasi yang menerima dua buah nilai angka, kemudian melakukan validasi dan
 operasi perhitungan dengan method kalkulator yang sesuai, serta mengembalikan
 hasilnya ke modul pemanggil.
 3. Proses validasi meliputi:
-a. nilai yang dihitung harus angka, tidak boleh karakter
-b. angka yang dihitung berada pada range -32,768 hingga 32,767
-c. operator yang boleh diinputkan adalah +, -, * (kali) dan / (bagi)
-d. pada operasi pembagian, pembagi tidak boleh bernilai nol
-e. proses validasi dilakukan secara berurutan, jika ada salah satu validasi yang
-tidak sesuai, maka proses berhenti menghitung dan menampilkan pesan error
-(Silahkan buat pesan errornya di expected result)
-f. Namun, jika semua validasi benar, maka proses dilanjutkan menuju perhitungan
-kalkulator sesuai dengan operator yang dipilih
+  - nilai yang dihitung harus angka, tidak boleh karakter
+  - angka yang dihitung berada pada range -32,768 hingga 32,767
+  - operator yang boleh diinputkan adalah +, -, * (kali) dan / (bagi)
+  - pada operasi pembagian, pembagi tidak boleh bernilai nol
+  - proses validasi dilakukan secara berurutan, jika ada salah satu validasi yang tidak sesuai, maka proses berhenti menghitung dan menampilkan pesan error (Silahkan buat pesan errornya di expected result)
+  - Namun, jika semua validasi benar, maka proses dilanjutkan menuju perhitungan kalkulator sesuai dengan operator yang dipilih

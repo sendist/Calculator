@@ -20,8 +20,6 @@ public class Kalkulator {
                 case "/":
                     hasil = prosesKalkulator.bagi(angka1, angka2);
                     break;
-                default:
-                    System.out.println("Operator tidak valid!");
             }
         }else{
             hasil = Double.NaN;

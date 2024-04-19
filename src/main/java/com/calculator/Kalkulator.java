@@ -32,7 +32,7 @@ public class Kalkulator {
 
     public static boolean isValid(String operand1, String operand2, String operator) {
 
-        String regex = "^[0-9]+$";
+        String regex = "^-?[0-9]+$";
         boolean isValid = true;
 
         boolean isNumber1 = operand1.matches(regex);

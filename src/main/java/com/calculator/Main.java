@@ -20,6 +20,5 @@ public class Main {
         if (!Double.isNaN(hasil)) {
             System.out.println("Hasil: " + hasil);
         }
-
     }
 }

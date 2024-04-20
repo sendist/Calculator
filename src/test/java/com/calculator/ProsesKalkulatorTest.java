@@ -49,8 +49,7 @@ public class ProsesKalkulatorTest {
         assertEquals(-11.0, tc3, 0.0001);
 
         double tc4 = prosesKalkulator.kurang(32767, -32768);
-        System.out.println(
-                "Method: kurang() TC4, Input: operand1=" + 32767 + ", operand2=" + -32768 + ", Output: " + tc4);
+        System.out.println("Method: kurang() TC4, Input: operand1=" + 32767 + ", operand2=" + -32768 + ", Output: " + tc4);
         assertEquals(65535.0, tc4, 0.0001);
 
         double tc5 = prosesKalkulator.kurang(32767, -10);

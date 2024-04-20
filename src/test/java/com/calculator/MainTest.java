@@ -1,47 +1,60 @@
 package com.calculator;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.*;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+class MainTest {
 
-public class MainTest {
-
-    private final PrintStream standardOut = System.out;
     private final ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
 
     @BeforeEach
-    public void setUp() {
+    void setUp() {
         System.setOut(new PrintStream(outputStreamCaptor));
     }
 
     @AfterEach
-    public void tearDown() {
-        System.setOut(standardOut);
+    void tearDown() {
+        System.setOut(System.out);
     }
 
-    private void provideInput(String data) {
+    void provideInput(String data) {
         ByteArrayInputStream testIn = new ByteArrayInputStream(data.getBytes());
         System.setIn(testIn);
     }
 
-    private String getOutput() {
+    String getOutput() {
         return outputStreamCaptor.toString().trim();
     }
 
     @Test
-    public void testCaseAddition() {
-        // Providing input for 4 + 10
+    void testMain_ValidOperandsValidOperator() {
         provideInput("4\n10\n+\n");
         Main.main(new String[] {});
         assertTrue(getOutput().contains("Hasil: 14.0"));
     }
 
-    // You can add more test cases for different operations here...
+    @Test
+    void testMain_ValidOperandsInvalidOperator() {
+        provideInput("4\n10\n^\n");
+        Main.main(new String[] {});
+        assertTrue(getOutput().contains("Operator yang diinputkan tidak valid!"));
+    }
 
+    @Test
+    void testMain_InvalidOperandsValidOperator() {
+        provideInput("x\n10\n+\n");
+        Main.main(new String[] {});
+        assertTrue(getOutput().contains("Nilai yang dihitung harus angka!"));
+    }
+
+    @Test
+    void testMain_InvalidOperandsInvalidOperator() {
+        provideInput("x\n10\n^\n");
+        Main.main(new String[] {});
+        assertTrue(getOutput().contains("Nilai yang dihitung harus angka!"));
+    }
 }

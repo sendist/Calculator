@@ -65,12 +65,26 @@ public class ProsesKalkulatorTest {
 
     @Test
     public void testKali() {
-        double a = 2.0;
-        double b = 3.0;
         ProsesKalkulator prosesKalkulator = new ProsesKalkulator();
-        double hasil = prosesKalkulator.kali(a, b);
-        System.out.println("Method: testKali, Input: a=" + a + ", b=" + b + ", Output: " + hasil);
-        assertEquals(6.0, hasil, 0.0001); // Menguji apakah 2 * 3 = 6
+        double hasil = prosesKalkulator.kali(4, 10);
+        System.out.println("Method: kali() TC01, Input: operand1 = " + 4 + ", operand2 =" + 10 + ", Output: " + hasil);
+        assertEquals(40.0, hasil, 0.0001);
+
+        hasil = prosesKalkulator.kali(-3, -1);
+        System.out.println("Method: kali() TC02, Input: operand1 = " + -3 + ", operand2 =" + -1 + ", Output: " + hasil);
+        assertEquals(3.0, hasil, 0.0001);
+
+        hasil = prosesKalkulator.kali(-1, 10);
+        System.out.println("Method: kali() TC03, Input: operand1 = " + -1 + ", operand2 =" + 10 + ", Output: " + hasil);
+        assertEquals(-10.0, hasil, 0.0001);
+
+        hasil = prosesKalkulator.kali(32767,10);
+        System.out.println("Method: kali() TC04, Input: operand1 = " + 32767 + ", operand2 =" + 10 + ", Output: " + hasil);
+        assertEquals(327670.0, hasil, 0.0001);
+
+        hasil = prosesKalkulator.kali(1,-32768);
+        System.out.println("Method: kali() TC05, Input: operand1 = " + 1 + ", operand2 =" + -32768 + ", Output: " + hasil);
+        assertEquals(-32768.0, hasil, 0.0001);
     }
 
     @Test

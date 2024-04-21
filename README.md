@@ -47,28 +47,46 @@ Selain itu, report hasil generate tools berada pada path build\reports, hasil re
 
 ## Instalasi
 1. Clone repo ini dengan perintah:
-`https://github.com/sendist/Calculator.git`
+	```
+	https://github.com/sendist/Calculator.git
+	```
 2. Masuk ke folder proyek:
-`cd simple-calculator`
+	```
+	cd simple-calculator
+	```
 3. Build proyek dengan perintah:
-`./gradlew build`
+	```
+	./gradlew build
+	```
 ## Menjalankan Aplikasi
 Untuk menjalankan aplikasi, jika menggunakan VSCode, maka dapat langsung menekan tombol run pada pojok kanan atas, atau jika ingin dengan perintah pada terminal maka jalankan:
-`java -jar build\libs\Calculator-1.0-SNAPSHOT.jar`
+```
+java -jar build\libs\Calculator-1.0-SNAPSHOT.jar
+```
 
 ## Menjalankan Test Aplikasi
 Untuk melakukan test aplikasi secara keseluruhan, gunakan perintah berikut:
-`./gradlew test`
+```
+./gradlew test
+```
 Untuk menjalankan test aplikasi pada unit tertentu, gunakan perintah seperti berikut:
-`./gradlew clean test --tests com.calculator.<Nama Class>.<Nama method>`
+```
+./gradlew clean test --tests com.calculator.<Nama Class>.<Nama method>
+```
 Contoh, untuk menjalankan test pada class Kalkulator dan pada method isValid(), maka perintahnya adalah:
-`./gradlew clean test --tests com.calculator.KalkulatorTest.testIsValid`
+```
+./gradlew clean test --tests com.calculator.KalkulatorTest.testIsValid
+```
 
 ## Membuat Test Report 
 Untuk membuat test report, pertama-tama pastikan aplikasi telah ter-build, gunakan perintah berikut untuk build aplikasi:
-`./gradlew build`
+```
+./gradlew build
+```
 Setelah itu jalankan test pada aplikasi dengan perintah:
-`./gradlew test`
+```
+./gradlew test
+```
 Setelah itu buka file index.html pada path build\reports\tests\test\index.html, maka test report dapat diakses, berikut adalah tampilan dari test report:
 ![Test Report](testReport.jpg)
 

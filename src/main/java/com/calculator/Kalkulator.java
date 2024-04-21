@@ -45,7 +45,7 @@ public class Kalkulator {
             double num2 = Double.parseDouble(operand2);
 
             // Validasi range angka
-            if (num1 < -32768 || num1 > 32767 || num2 < -32768 || num2 > 32767) {
+            if (num1 < -32768 || num2 > 32767 || num2 < -32768 || num2 > 32767) {
                 System.out.println("Nilai operand harus berada pada range -32,768 hingga 32,767!");
                 isValid = false;
             }

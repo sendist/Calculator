@@ -4,179 +4,214 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 public class KalkulatorTest {
+    Kalkulator kalkulator = new Kalkulator();    
     
     @Test
-    public void testKalkulasiAddition() {
-        Kalkulator kalkulator = new Kalkulator();
-
-        double tc1 = kalkulator.kalkulasi("4", "2", "+");
-        System.out.println("Method: kalkulasi() TC1, Input: operand1= 4, operand2= 2, operator= +, Output: " + tc1);
-        assertEquals(6.0, tc1, 0.0001);
-
-        double tc2 = kalkulator.kalkulasi("-4", "-2", "+");
-        System.out.println("Method: kalkulasi() TC2, Input: operand1= -4, operand2= -2, operator= +, Output: " + tc2);
-        assertEquals(-6.0, tc2, 0.0001);
-
-        double tc3 = kalkulator.kalkulasi("4", "-2", "+");
-        System.out.println("Method: kalkulasi() TC3, Input: operand1= 4, operand2= -2, operator= +, Output: " + tc3);
-        assertEquals(2.0, tc3, 0.0001);
-
-        double tc4 = kalkulator.kalkulasi("32767", "-32768", "+");
-        System.out.println(
-                "Method: kalkulasi() TC4, Input: operand1= 32767, operand2= -32768, operator= +, Output: " + tc4);
-        assertEquals(-1.0, tc4, 0.0001);
+    public void testKalkulasiTc1() {
+        double result = kalkulator.kalkulasi("4", "2", "+");
+        System.out.println("Method: kalkulasi() TC1, Input: operand1=4, operand2=2, operator=+, Output: " + result);
+        assertEquals(6.0, result, 0.0001);
     }
 
     @Test
-    public void testKalkulasiSubtraction() {
-        Kalkulator kalkulator = new Kalkulator();
-
-        double tc5 = kalkulator.kalkulasi("4", "2", "-");
-        System.out.println("Method: kalkulasi() TC5, Input: operand1= 4, operand2= 2, operator= -, Output: " + tc5);
-        assertEquals(2.0, tc5, 0.0001);
-
-        double tc6 = kalkulator.kalkulasi("-4", "-2", "-");
-        System.out.println("Method: kalkulasi() TC6, Input: operand1= -4, operand2= -2, operator= -, Output: " + tc6);
-        assertEquals(-2.0, tc6, 0.0001);
-
-        double tc7 = kalkulator.kalkulasi("4", "-2", "-");
-        System.out.println("Method: kalkulasi() TC7, Input: operand1= 4, operand2= -2, operator= -, Output: " + tc7);
-        assertEquals(6.0, tc7, 0.0001);
-
-        double tc8 = kalkulator.kalkulasi("32767", "-32768", "-");
-        System.out.println(
-                "Method: kalkulasi() TC8, Input: operand1= 32767, operand2= -32768, operator= -, Output: " + tc8);
-        assertEquals(65535.0, tc8, 0.0001);
+    public void testKalkulasiTc2() {
+        double result = kalkulator.kalkulasi("-4", "-2", "+");
+        System.out.println("Method: kalkulasi() TC2, Input: operand1=-4, operand2=-2, operator=+, Output: " + result);
+        assertEquals(-6.0, result, 0.0001);
     }
 
     @Test
-    public void testKalkulasiMultiplication() {
-        Kalkulator kalkulator = new Kalkulator();
-
-        double tc9 = kalkulator.kalkulasi("3", "2", "*");
-        System.out.println("Method: kalkulasi() TC9, Input: operand1= 3, operand2= 2, operator= *, Output: " + tc9);
-        assertEquals(6.0, tc9, 0.0001);
-
-        double tc10 = kalkulator.kalkulasi("-3", "-2", "*");
-        System.out.println("Method: kalkulasi() TC10, Input: operand1= -3, operand2= -2, operator= *, Output: " + tc10);
-        assertEquals(6.0, tc10, 0.0001);
-
-        double tc11 = kalkulator.kalkulasi("3", "-2", "*");
-        System.out.println("Method: kalkulasi() TC11, Input: operand1= 3, operand2= -2, operator= *, Output: " + tc11);
-        assertEquals(-6.0, tc11, 0.0001);
-
-        double tc12 = kalkulator.kalkulasi("32767", "-32768", "*");
-        System.out.println(
-                "Method: kalkulasi() TC12, Input: operand1= 32767, operand2= -32768, operator= *, Output: " + tc12);
-        assertEquals(-1073709056.0, tc12, 0.0001);
+    public void testKalkulasiTc3() {
+        double result = kalkulator.kalkulasi("4", "-2", "+");
+        System.out.println("Method: kalkulasi() TC3, Input: operand1=4, operand2=-2, operator=+, Output: " + result);
+        assertEquals(2.0, result, 0.0001);
     }
 
     @Test
-    public void testKalkulasiDivision() {
-        Kalkulator kalkulator = new Kalkulator();
-
-        double tc13 = kalkulator.kalkulasi("6", "3", "/");
-        System.out.println("Method: kalkulasi() TC13, Input: operand1= 6, operand2= 3, operator= /, Output: " + tc13);
-        assertEquals(2.0, tc13, 0.0001);
-
-        double tc14 = kalkulator.kalkulasi("-6", "-3", "/");
-        System.out.println("Method: kalkulasi() TC14, Input: operand1= -6, operand2= -3, operator= /, Output: " + tc14);
-        assertEquals(2.0, tc14, 0.0001);
-
-        double tc15 = kalkulator.kalkulasi("6", "-3", "/");
-        System.out.println("Method: kalkulasi() TC15, Input: operand1= 6, operand2= -3, operator= /, Output: " + tc15);
-        assertEquals(-2.0, tc15, 0.0001);
-
-        double tc16 = kalkulator.kalkulasi("32767", "-32768", "/");
-        System.out.println(
-                "Method: kalkulasi() TC16, Input: operand1= 32767, operand2= -32768, operator= /, Output: " + tc16);
-        assertEquals(-0.999969482421875, tc16, 0.0001);
+    public void testKalkulasiTc4() {
+        double result = kalkulator.kalkulasi("32767", "-32768", "+");
+        System.out.println("Method: kalkulasi() TC4, Input: operand1=32767, operand2=-32768, operator=+, Output: " + result);
+        assertEquals(-1.0, result, 0.0001);
+    }
+    
+    @Test
+    public void testKalkulasiTc5() {
+        double result = kalkulator.kalkulasi("4", "2", "-");
+        System.out.println("Method: kalkulasi() TC5, Input: operand1=4, operand2=2, operator=-, Output: " + result);
+        assertEquals(2.0, result, 0.0001);
     }
 
     @Test
-    public void testKalkulasiInvalidOperations() {
-        Kalkulator kalkulator = new Kalkulator();
-        double result;
+    public void testKalkulasiTc6() {
+        double result = kalkulator.kalkulasi("-4", "-2", "-");
+        System.out.println("Method: kalkulasi() TC6, Input: operand1=-4, operand2=-2, operator=-, Output: " + result);
+        assertEquals(-2.0, result, 0.0001);
+    }
 
-        // TC17: Pengujian operasi pertambahan dengan operand kedua bukan angka
-        result = kalkulator.kalkulasi("2", "dua", "+");
-        System.out.println(
-                "Method: kalkulasi() TC17, Input: operand1= 2, operand2= 'dua', operator= +, Output: " + result);
+    @Test
+    public void testKalkulasiTc7() {
+        double result = kalkulator.kalkulasi("4", "-2", "-");
+        System.out.println("Method: kalkulasi() TC7, Input: operand1=4, operand2=-2, operator=-, Output: " + result);
+        assertEquals(6.0, result, 0.0001);
+    }
+
+    @Test
+    public void testKalkulasiTc8() {
+        double result = kalkulator.kalkulasi("32767", "-32768", "-");
+        System.out.println("Method: kalkulasi() TC8, Input: operand1=32767, operand2=-32768, operator=-, Output: " + result);
+        assertEquals(65535.0, result, 0.0001);
+    }
+
+    @Test
+    public void testKalkulasiTc9() {
+        double result = kalkulator.kalkulasi("3", "2", "*");
+        System.out.println("Method: kalkulasi() TC9, Input: operand1=3, operand2=2, operator=*, Output: " + result);
+        assertEquals(6.0, result, 0.0001);
+    }
+
+    @Test
+    public void testKalkulasiTc10() {
+        double result = kalkulator.kalkulasi("-3", "-2", "*");
+        System.out.println("Method: kalkulasi() TC10, Input: operand1=-3, operand2=-2, operator=*, Output: " + result);
+        assertEquals(6.0, result, 0.0001);
+    }
+
+    @Test
+    public void testKalkulasiTc11() {
+        double result = kalkulator.kalkulasi("3", "-2", "*");
+        System.out.println("Method: kalkulasi() TC11, Input: operand1=3, operand2=-2, operator=*, Output: " + result);
+        assertEquals(-6.0, result, 0.0001);
+    }
+
+    @Test
+    public void testKalkulasiTc12() {
+        double result = kalkulator.kalkulasi("32767", "-32768", "*");
+        System.out.println("Method: kalkulasi() TC12, Input: operand1=32767, operand2=-32768, operator=*, Output: " + result);
+        assertEquals(-1073709056.0, result, 0.0001);
+    }
+
+    @Test
+    public void testKalkulasiTc13() {
+        double result = kalkulator.kalkulasi("6", "3", "/");
+        System.out.println("Method: kalkulasi() TC13, Input: operand1=6, operand2=3, operator=/, Output: " + result);
+        assertEquals(2.0, result, 0.0001);
+    }
+
+    @Test
+    public void testKalkulasiTc14() {
+        double result = kalkulator.kalkulasi("-6", "-3", "/");
+        System.out.println("Method: kalkulasi() TC14, Input: operand1=-6, operand2=-3, operator=/, Output: " + result);
+        assertEquals(2.0, result, 0.0001);
+    }
+
+    @Test
+    public void testKalkulasiTc15() {
+        double result = kalkulator.kalkulasi("6", "-3", "/");
+        System.out.println("Method: kalkulasi() TC15, Input: operand1=6, operand2=-3, operator=/, Output: " + result);
+        assertEquals(-2.0, result, 0.0001);
+    }
+
+    @Test
+    public void testKalkulasiTc16() {
+        double result = kalkulator.kalkulasi("32767", "-32768", "/");
+        System.out.println("Method: kalkulasi() TC16, Input: operand1=32767, operand2=-32768, operator=/, Output: " + result);
+        assertEquals(-0.999969482421875, result, 0.0001);
+    }
+
+    @Test
+    public void testKalkulasiTc17() {
+        double result = kalkulator.kalkulasi("2", "dua", "+");
+        System.out.println("Method: kalkulasi() TC17, Input: operand1= 2, operand2= 'dua', operator= +, Output: " + result);
         assertTrue(Double.isNaN(result));
+    }
 
-        // TC18: Pengujian operasi pengurangan dengan operand kedua bukan angka
-        result = kalkulator.kalkulasi("2", "dua", "-");
-        System.out.println(
-                "Method: kalkulasi() TC18, Input: operand1= 2, operand2= 'dua', operator= -, Output: " + result);
+    @Test
+    public void testKalkulasiTc18() {
+        double result = kalkulator.kalkulasi("2", "dua", "-");
+        System.out.println("Method: kalkulasi() TC18, Input: operand1= 2, operand2= 'dua', operator= -, Output: " + result);
         assertTrue(Double.isNaN(result));
+    }
 
-        // TC19: Pengujian operasi perkalian dengan operand kedua bukan angka
-        result = kalkulator.kalkulasi("2", "dua", "*");
-        System.out.println(
-                "Method: kalkulasi() TC19, Input: operand1= 2, operand2= 'dua', operator= *, Output: " + result);
+    @Test
+    public void testKalkulasiTc19() {
+        double result = kalkulator.kalkulasi("2", "dua", "*");
+        System.out.println("Method: kalkulasi() TC19, Input: operand1= 2, operand2= 'dua', operator= *, Output: " + result);
         assertTrue(Double.isNaN(result));
+    }
 
-        // TC20: Pengujian operasi pembagian dengan operand kedua bukan angka
-        result = kalkulator.kalkulasi("2", "dua", "/");
-        System.out.println(
-                "Method: kalkulasi() TC20, Input: operand1= 2, operand2= 'dua', operator= /, Output: " + result);
+    @Test
+    public void testKalkulasiTc20() {
+        double result = kalkulator.kalkulasi("2", "dua", "/");
+        System.out.println("Method: kalkulasi() TC20, Input: operand1= 2, operand2= 'dua', operator= /, Output: " + result);
         assertTrue(Double.isNaN(result));
+    }
 
-        // TC21: Pengujian operasi pertambahan dengan nilai operand melebihi batas atas
-        result = kalkulator.kalkulasi("2", "100000", "+");
-        System.out.println(
-                "Method: kalkulasi() TC21, Input: operand1= 2, operand2= 100000, operator= +, Output: " + result);
+    @Test
+    public void testKalkulasiTc21() {
+        double result = kalkulator.kalkulasi("2", "100000", "+");
+        System.out.println("Method: kalkulasi() TC21, Input: operand1= 2, operand2= 100000, operator= +, Output: " + result);
         assertTrue(Double.isNaN(result));
+    }
 
-        // TC22: Pengujian operasi pertambahan dengan nilai operand melebihi batas bawah
-        result = kalkulator.kalkulasi("2", "-100000", "+");
-        System.out.println(
-                "Method: kalkulasi() TC22, Input: operand1= 2, operand2= -100000, operator= +, Output: " + result);
+    @Test
+    public void testKalkulasiTc22() {
+        double result = kalkulator.kalkulasi("2", "-100000", "+");
+        System.out.println("Method: kalkulasi() TC22, Input: operand1= 2, operand2= -100000, operator= +, Output: " + result);
         assertTrue(Double.isNaN(result));
+    }
 
-        // TC23: Pengujian operasi pengurangan dengan nilai operand melebihi batas atas
-        result = kalkulator.kalkulasi("2", "100000", "-");
-        System.out.println(
-                "Method: kalkulasi() TC23, Input: operand1= 2, operand2= 100000, operator= -, Output: " + result);
+    @Test
+    public void testKalkulasiTc23() {
+        double result = kalkulator.kalkulasi("2", "100000", "-");
+        System.out.println("Method: kalkulasi() TC23, Input: operand1= 2, operand2= 100000, operator= -, Output: " + result);
         assertTrue(Double.isNaN(result));
+    }
 
-        // TC24: Pengujian operasi pengurangan dengan nilai operand melebihi batas bawah
-        result = kalkulator.kalkulasi("2", "-100000", "-");
-        System.out.println(
-                "Method: kalkulasi() TC24, Input: operand1= 2, operand2= -100000, operator= -, Output: " + result);
+    @Test
+    public void testKalkulasiTc24() {
+        double result = kalkulator.kalkulasi("2", "-100000", "-");
+        System.out.println("Method: kalkulasi() TC24, Input: operand1= 2, operand2= -100000, operator= -, Output: " + result);
         assertTrue(Double.isNaN(result));
+    }
 
-        // TC25: Pengujian operasi perkalian dengan nilai operand melebihi batas atas
-        result = kalkulator.kalkulasi("2", "100000", "*");
-        System.out.println(
-                "Method: kalkulasi() TC25, Input: operand1= 2, operand2= 100000, operator= *, Output: " + result);
+    @Test
+    public void testKalkulasiTc25() {
+        double result = kalkulator.kalkulasi("2", "100000", "*");
+        System.out.println("Method: kalkulasi() TC25, Input: operand1= 2, operand2= 100000, operator= *, Output: " + result);
         assertTrue(Double.isNaN(result));
+    }
 
-        // TC26: Pengujian operasi perkalian dengan nilai operand melebihi batas bawah
-        result = kalkulator.kalkulasi("2", "-100000", "*");
-        System.out.println(
-                "Method: kalkulasi() TC26, Input: operand1= 2, operand2= -100000, operator= *, Output: " + result);
+    @Test
+    public void testKalkulasiTc26() {
+        double result = kalkulator.kalkulasi("2", "-100000", "*");
+        System.out.println("Method: kalkulasi() TC26, Input: operand1= 2, operand2= -100000, operator= *, Output: " + result);
         assertTrue(Double.isNaN(result));
+    }
 
-        // TC27: Pengujian operasi pembagian dengan nilai operand melebihi batas atas
-        result = kalkulator.kalkulasi("100000", "2", "/");
-        System.out.println(
-                "Method: kalkulasi() TC27, Input: operand1= 100000, operand2= 2, operator= /, Output: " + result);
+    @Test
+    public void testKalkulasiTc27() {
+        double result = kalkulator.kalkulasi("100000", "2", "/");
+        System.out.println("Method: kalkulasi() TC27, Input: operand1= 100000, operand2= 2, operator= /, Output: " + result);
         assertTrue(Double.isNaN(result));
+    }
 
-        // TC28: Pengujian operasi pembagian dengan nilai operand melebihi batas bawah
-        result = kalkulator.kalkulasi("-100000", "2", "/");
-        System.out.println(
-                "Method: kalkulasi() TC28, Input: operand1= -100000, operand2= 2, operator= /, Output: " + result);
+    @Test
+    public void testKalkulasiTc28() {
+        double result = kalkulator.kalkulasi("-100000", "2", "/");
+        System.out.println("Method: kalkulasi() TC28, Input: operand1= -100000, operand2= 2, operator= /, Output: " + result);
         assertTrue(Double.isNaN(result));
+    }
 
-        // TC29: Pengujian operasi yang tidak dikenali, contoh operasi pangkat
-        result = kalkulator.kalkulasi("2", "4", "^");
+    @Test
+    public void testKalkulasiTc29() {
+        double result = kalkulator.kalkulasi("2", "4", "^");
         System.out.println("Method: kalkulasi() TC29, Input: operand1= 2, operand2= 4, operator= ^, Output: " + result);
         assertTrue(Double.isNaN(result));
+    }
 
-        // TC30: Pengujian operasi pembagian dengan pembagi bernilai nol
-        result = kalkulator.kalkulasi("2", "0", "/");
+    @Test
+    public void testKalkulasiTc30() {
+        double result = kalkulator.kalkulasi("2", "0", "/");
         System.out.println("Method: kalkulasi() TC30, Input: operand1= 2, operand2= 0, operator= /, Output: " + result);
         assertTrue(Double.isNaN(result));
     }

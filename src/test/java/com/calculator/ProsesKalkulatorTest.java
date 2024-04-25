@@ -8,8 +8,6 @@ import org.junit.jupiter.api.Test;
 public class ProsesKalkulatorTest {
     ProsesKalkulator prosesKalkulator = new ProsesKalkulator();
 
-    private ProsesKalkulator prosesKalkulator;
-
     @BeforeEach
     public void setUp() {
         prosesKalkulator = new ProsesKalkulator();

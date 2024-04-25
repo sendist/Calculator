@@ -65,26 +65,37 @@ public class ProsesKalkulatorTest {
     }
 
     @Test
-    public void testKali() {
-        ProsesKalkulator prosesKalkulator = new ProsesKalkulator();
+    public void testKaliTC01() {
         double hasil = prosesKalkulator.kali(4, 10);
         System.out.println("Method: kali() TC01, Input: operand1 = " + 4 + ", operand2 =" + 10 + ", Output: " + hasil);
         assertEquals(40.0, hasil, 0.0001);
+    }
 
-        hasil = prosesKalkulator.kali(-3, -1);
+    @Test
+    public void testKaliTC02() {
+        double hasil = prosesKalkulator.kali(-3, -1);
         System.out.println("Method: kali() TC02, Input: operand1 = " + -3 + ", operand2 =" + -1 + ", Output: " + hasil);
         assertEquals(3.0, hasil, 0.0001);
+    }
 
-        hasil = prosesKalkulator.kali(-1, 10);
+    @Test
+    public void testKaliTC03() {
+        double hasil = prosesKalkulator.kali(-1, 10);
         System.out.println("Method: kali() TC03, Input: operand1 = " + -1 + ", operand2 =" + 10 + ", Output: " + hasil);
         assertEquals(-10.0, hasil, 0.0001);
+    }
 
-        hasil = prosesKalkulator.kali(32767, 10);
+    @Test
+    public void testKaliTC04() {
+        double hasil = prosesKalkulator.kali(32767, 10);
         System.out.println(
                 "Method: kali() TC04, Input: operand1 = " + 32767 + ", operand2 =" + 10 + ", Output: " + hasil);
         assertEquals(327670.0, hasil, 0.0001);
+    }
 
-        hasil = prosesKalkulator.kali(1, -32768);
+    @Test
+    public void testKaliTC05() {
+        double hasil = prosesKalkulator.kali(1, -32768);
         System.out.println(
                 "Method: kali() TC05, Input: operand1 = " + 1 + ", operand2 =" + -32768 + ", Output: " + hasil);
         assertEquals(-32768.0, hasil, 0.0001);

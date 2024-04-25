@@ -217,29 +217,41 @@ public class KalkulatorTest {
     }
 
     @Test
-    public void testIsValid() {
+    public void testIsValidOperandInRange() {
         // TC01: Pengujian operand1 dan operand2 merupakan angka dalam range, operator valid, dan pembagi tidak nol
         boolean hasil = Kalkulator.isValid("3", "5", "+");
         System.out.println("Method: isValid() TC01, Input: operand1 = 3, operand2 = 5, operator = +, Output: " + hasil);
         assertTrue(hasil);
+    }
 
+    @Test
+    public void testIsValidOperandIsNotANumber() {
         // TC02: Pengujian dengan operand yang bukan merupakan angka
-        hasil = Kalkulator.isValid("hai", "{}", "/");
+        boolean hasil = Kalkulator.isValid("hai", "{}", "/");
         System.out.println("Method: isValid() TC02, Input: operand1 = 'hai', operand2 = '{}', operator = /, Output: " + hasil);
         assertFalse(hasil);
+    }
 
+    @Test
+    public void testIsValidOperandOutOfRange() {
         // TC03: Pengujian dengan operand angka yang berada di luar range
-        hasil = Kalkulator.isValid("35000", "30", "-");
+        boolean hasil = Kalkulator.isValid("35000", "30", "-");
         System.out.println("Method: isValid() TC03, Input: operand1 = 35000, operand2 = 30, operator = -, Output: " + hasil);
         assertFalse(hasil);
+    }
 
+    @Test
+    public void testIsValidInvalidOperator() {
         // TC04: Pengujian dengan operator yang tidak valid
-        hasil = Kalkulator.isValid("12", "1", "B");
+        boolean hasil = Kalkulator.isValid("12", "1", "B");
         System.out.println("Method: isValid() TC04, Input: operand1 = 12, operand2 = 1, operator = B, Output: " + hasil);
         assertFalse(hasil);
+    }
 
+    @Test
+    public void testIsValidDevideByZero() {
         // TC05: Pengujian pembagian dengan pembagi nol
-        hasil = Kalkulator.isValid("7", "0", "/");
+        boolean hasil = Kalkulator.isValid("7", "0", "/");
         System.out.println("Method: isValid() TC05, Input: operand1 = 7, operand2 = 0, operator = /, Output: " + hasil);
         assertFalse(hasil);
     }
